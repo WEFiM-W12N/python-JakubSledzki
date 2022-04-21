@@ -23,26 +23,17 @@ def index(request):
     return HttpResponse(output)
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return HttpResponse("Pytania.")
 # Create your views here.
 
-def detail(request, question_id):
-    question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'polls/detail.html', {'question': question})
     
 def detail(request, question_id):
-    return HttpResponse("You're looking at question %s." % question_id)
+    return HttpResponse("Pytanie nr.%s." % question_id)
 
-def detail(request, question_id):
-    try:
-        question = Question.objects.get(pk=question_id)
-    except Question.DoesNotExist:
-        raise Http404("Question does not exist")
-    return render(request, 'polls/detail.html', {'question': question})
     
 def results(request, question_id):
-    response = "You're looking at the results of question %s."
+    response = "Wyniki pytania nr.%s."
     return HttpResponse(response % question_id)
 
 def vote(request, question_id):
-    return HttpResponse("You're voting on question %s." % question_id)
+    return HttpResponse("głosujesz na pytanie nr.%s." % question_id)
