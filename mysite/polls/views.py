@@ -28,12 +28,11 @@ def index(request):
 
     
 def detail(request, question_id):
-    return HttpResponse("Pytanie nr.%s." % question_id)
-
+    return HttpResponse("Pytanie nr. %s." % question_id)
     
 def results(request, question_id):
-    response = "Wyniki pytania nr.%s."
+    response = "Wyniki pytania nr. %s."
     return HttpResponse(response % question_id)
 
 def vote(request, question_id):
-    return HttpResponse("głosujesz na pytanie nr.%s." % question_id)
+    return HttpResponse("głosujesz na pytanie nr. %s." % question_id)
