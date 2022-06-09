@@ -1,15 +1,20 @@
 from django.db import models
 
 # Create your models here.
-class film(models.Model):
-    nazwa = models.CharField(max_length=40)
-    gatunek = models.IntegerField
-class gatunek(models.Model):
-    nazwa = models.CharField(max_length=40)
-    film = models.ForeignKey(
-        'film',
-        on_delete=models.CASCADE,
-    )
-    ocena = models.ManyToManyField("emoty")
 class ocena(models.Model):
-    nazwa = models.CharField(max_length=40)
+    nazwa = models.CharField(max_length=200, null=True)
+    def __str__(self) -> str:
+        return self.nazwa
+
+class gatunek(models.Model):
+    nazwa = models.CharField(max_length=200)
+    def __str__(self) -> str:
+        return self.nazwa
+
+class film(models.Model):
+    ocena = models.ForeignKey(ocena, on_delete = models.CASCADE)
+    nazwa = models.CharField(max_length=200)
+    gatunek = models.ManyToManyField("gatunek")
+   
+    def __str__(self) -> str:
+        return self.nazwa

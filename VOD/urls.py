@@ -1,9 +1,10 @@
-from http.client import ImproperConnectionState
 from django.urls import URLPattern, path
-
-from . import  views
+from  .import  views
+from django.contrib import admin
 
 app_name = 'VOD'
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('gatunek/', views.gatunek, name = "gatunek"),
+    path('film/',views.film, name = "film"),
+    path('ocena/',views.ocena, name = "ocena"),
 ]
