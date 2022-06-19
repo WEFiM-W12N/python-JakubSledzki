@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body style="background-color:rgb(236, 58, 156); font-family:verdana;"></body>
+    <h1> Lista Filmów: </h1>
+
+    {% for film in film_list %}
+        <li>{{film.Nazwa}}</li>
+    {% empty %}
+        <li>Brak Filmów.</li>
+    {% endfor %}
+
+    <br>
+</body>
+</html>

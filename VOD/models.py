@@ -1,20 +1,20 @@
 from django.db import models
 
 # Create your models here.
-class ocena(models.Model):
+class Ocena(models.Model):
     nazwa = models.CharField(max_length=200, null=True)
     def __str__(self) -> str:
         return self.nazwa
 
-class gatunek(models.Model):
+class Gatunek(models.Model):
     nazwa = models.CharField(max_length=200)
     def __str__(self) -> str:
         return self.nazwa
 
-class film(models.Model):
-    ocena = models.ForeignKey(ocena, on_delete = models.CASCADE)
-    nazwa = models.CharField(max_length=200)
-    gatunek = models.ManyToManyField("gatunek")
+class Film(models.Model):
+    Nazwa = models.CharField(max_length=200)
+    Ocena = models.ForeignKey(Ocena, on_delete = models.CASCADE)   
+    Gatunek = models.ManyToManyField("gatunek")
    
     def __str__(self) -> str:
-        return self.nazwa
+        return self.Nazwa

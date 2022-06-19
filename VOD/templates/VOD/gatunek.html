@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body style="background-color:rgb(56, 230, 33); font-family:verdana;"></body>
+    <h1> Lista Gatunków: </h1>
+
+    {% for gatunek in gatunek_list %}
+        <li>{{gatunek.nazwa}}</li>
+    {% empty %}
+        <li>Brak Gatunków.</li>
+    {% endfor %}
+
+    <br>
+</body>
+</html>

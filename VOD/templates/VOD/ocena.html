@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body style="background-color:rgb(56, 230, 33); font-family:verdana;"></body>
+    <h1> Lista Ocen: </h1>
+
+    {% for ocena in ocena_list %}
+        <li>{{ocena.nazwa}}</li>
+    {% empty %}
+        <li>Brak ocen.</li>
+    {% endfor %}
+
+    <br>
+</body>
+</html>

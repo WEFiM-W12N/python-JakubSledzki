@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import gatunek, film ,ocena
+from .models import Gatunek, Film ,Ocena
 
 # Register your models here.
-admin.site.register(gatunek),
-admin.site.register(film),
-admin.site.register(ocena),
+admin.site.register(Gatunek),
+admin.site.register(Film),
+admin.site.register(Ocena),
